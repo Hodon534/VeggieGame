@@ -1,4 +1,4 @@
-package games.vege.demo.ui.layout;
+package games.vege.demo.view.layout;
 
 public enum HBoxUI {
     SPACING(5),

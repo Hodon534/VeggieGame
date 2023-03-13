@@ -1,4 +1,4 @@
-package games.vege.demo.ui.layout;
+package games.vege.demo.view.layout;
 
 public enum BorderPaneUI {
     PREF_SIZE_V(1000), //width

@@ -1,8 +1,9 @@
 package games.vege.demo.configuration;
 //ok
 public enum Settings {
-    ROW_SIZE(12),
-    COLUMN_SIZE(12);
+    ROW(12),
+    COLUMN(12),
+    MAX_POINTS(5000);
 
     public final int size;
     Settings(int size) {

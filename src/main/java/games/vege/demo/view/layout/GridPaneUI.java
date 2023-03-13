@@ -1,4 +1,4 @@
-package games.vege.demo.ui.layout;
+package games.vege.demo.view.layout;
 
 import games.vege.demo.configuration.Settings;
 
@@ -10,10 +10,10 @@ public enum GridPaneUI {
     INSETS_V1(10), //left
     INSETS_V2(10), //right
     INSETS_V3(10), //top
-    ROW(Settings.ROW_SIZE.size),
-    COLUMN(Settings.COLUMN_SIZE.size),
-    V_GAP(10),
-    H_GAP(10);
+    ROW(Settings.ROW.size),
+    COLUMN(Settings.COLUMN.size),
+    V_GAP(0), //bylo 10
+    H_GAP(0); //bylo 10
 
     public final int value;
     GridPaneUI(int value) {

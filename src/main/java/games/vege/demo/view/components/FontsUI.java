@@ -1,4 +1,4 @@
-package games.vege.demo.ui.components;
+package games.vege.demo.view.components;
 
 public enum FontsUI {
     BUTTON_FONT("-fx-font: 12 arial; "),

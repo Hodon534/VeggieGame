@@ -27,4 +27,19 @@ public class ShuffleMachine {
         }
         return elementNo;
     }
+    //shuffle at the start of the game - no fruits, only veggies
+    public static int initialShuffleElements(){
+        int shuffle = random.nextInt(1,100);
+        int elementNo = 0;
+        if (shuffle >= 1 && shuffle <= 25) {
+            elementNo = 1;
+        } else if (shuffle >= 26 && shuffle <= 50) {
+            elementNo = 2;
+        } else if (shuffle >= 51 && shuffle <= 75) {
+            elementNo = 3;
+        } else if (shuffle >= 76 && shuffle <= 100) {
+            elementNo = 4;
+        }
+        return elementNo;
+    }
 }
