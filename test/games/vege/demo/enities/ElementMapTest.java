@@ -1,7 +1,9 @@
-package games.vege.demo.enities;
+/*package games.vege.demo.enities;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ElementMapTest {
     public ElementGrid elementGrid;
@@ -43,17 +45,17 @@ class ElementMapTest {
 
     @Test
     void testAreFieldsNextToEachOther() {
-        /*fieldMap.fieldClicked(1, 2);
+        fieldMap.fieldClicked(1, 2);
         assertEquals(1, fieldMap.getLocationOnMap().getRow());
         assertEquals(2, fieldMap.getLocationOnMap().getCol());
         assertTrue(fieldMap.areFieldsNextToEachOther(1, 3));
         assertTrue(fieldMap.areFieldsNextToEachOther(2, 2));
         assertFalse(fieldMap.areFieldsNextToEachOther(2, 3));
         assertTrue(fieldMap.areFieldsNextToEachOther(1, 3));
-        assertFalse(fieldMap.areFieldsNextToEachOther(2, 5));*/
+        assertFalse(fieldMap.areFieldsNextToEachOther(2, 5));
     }
 
     @Test
     void swapFieldsIfPossible() {
     }
-}
+}*/

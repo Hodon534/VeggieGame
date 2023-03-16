@@ -8,12 +8,12 @@ import javafx.scene.control.Button;
 public class BoardUpdates {
     private final Button[][] buttons;
     private final ElementGrid elementGrid;
-    private final GameMechanics gameMechanics;
+    private final Moves moves;
 
-    public BoardUpdates(Button[][] buttons, ElementGrid elementGrid, GameMechanics gameMechanics){
+    public BoardUpdates(Button[][] buttons, ElementGrid elementGrid, Moves moves){
         this.buttons = buttons;
         this.elementGrid = elementGrid;
-        this.gameMechanics = gameMechanics;
+        this.moves = moves;
         updateAllButtons();
     }
 
@@ -33,7 +33,7 @@ public class BoardUpdates {
 
     public void setButtonOnAction(int row, int col){
         buttons[row][col].setOnAction((event) ->  {
-            gameMechanics.makeAMove(row, col);
+            moves.chooseWhichMoveToMake(row, col);
             updateAllButtons();
         });
     }

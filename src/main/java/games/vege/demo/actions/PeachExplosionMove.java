@@ -3,37 +3,15 @@ package games.vege.demo.actions;
 import games.vege.demo.configuration.Settings;
 import games.vege.demo.enities.Element;
 import games.vege.demo.enities.ElementGrid;
-import games.vege.demo.enities.LocationOnMap;
 
-import java.util.HashMap;
-
-public class ExplodeFields {
-    private final ElementGrid elementGrid;
+public class PeachExplosionMove{
     private final Element[][] elementArray;
 
-    public ExplodeFields(ElementGrid elementGrid) {
-        this.elementArray = elementGrid.getFieldMap();
-        this.elementGrid = elementGrid;
+    public PeachExplosionMove(ElementGrid elementGrid) {
+        elementArray = elementGrid.getFieldMap();
     }
 
-    //źle! coś poprawić, źle kolumna i wiersz, movefieldsdown usunąć stąd i przerzucić o ogólnej klasy
-    public void plumRowExplosion(int row){
-        for (int localRow = row; localRow == row; localRow++) {
-            for (int col =  0; col < Settings.COLUMN.size; col++) {
-                elementArray[localRow][col] = null;
-            }
-    }
-}
-
-    public void pineappleColumnExplosion(int col){
-        for (int row = 0; row < Settings.COLUMN.size; row++) {
-            for (int tempCol = col; tempCol == col; tempCol++) {
-                elementArray[row][tempCol] = null;
-            }
-        }
-    }
-
-    public void peachSquareExplosion(int row, int col){
+    public void makeMove(int row, int col){
         if (checkIfElementInArray(row, col)) {
             elementArray[row][col] = null;
         }
@@ -70,22 +48,4 @@ public class ExplodeFields {
         } return exist;
     }
 
-    public void explodeElementsAfterSwapping(HashMap hashMap) {
-
-            addFieldsToHashMap(hashMap);
-
-    }
-
-    public void addFieldsToHashMap(HashMap hashMap) {
-        //hashMap.get(1
-            for(Object fieldId: hashMap.keySet()) {
-            findIt(hashMap, fieldId);
-        }
-    }
-
-    public void findIt(HashMap hashMap, Object fieldId) {
-        //if (hashMap.get(fieldId).)
-    }
-
 }
-

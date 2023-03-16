@@ -4,7 +4,6 @@ import games.vege.demo.configuration.Settings;
 import games.vege.demo.view.BoardDesign;
 import games.vege.demo.view.components.ButtonStyle;
 import games.vege.demo.view.components.ButtonUI;
-import games.vege.demo.view.layout.GridPaneUI;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;

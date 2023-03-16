@@ -17,8 +17,8 @@ public class RunGame {
         Buttons.setStartButtonOnAction(startPage.getStartButton(), boardDesign, window);
         Button[][] buttons = Buttons.createAllButtonsOnGridPane(boardDesign.getGridPane());
         ElementGrid elementGrid = new ElementGrid();
-        GameMechanics gameMechanics = new GameMechanics(buttons, elementGrid);
-        BoardUpdates boardUpdates = new BoardUpdates(buttons, elementGrid, gameMechanics);
+        Moves moves = new Moves(elementGrid);
+        BoardUpdates boardUpdates = new BoardUpdates(buttons, elementGrid, moves);
         Image appIcon = new Image(RunGame.class.getResourceAsStream("/icon.png"));
         window.getIcons().add(appIcon);
         window.setScene(startPage.getScene());

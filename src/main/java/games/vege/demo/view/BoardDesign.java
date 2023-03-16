@@ -88,8 +88,4 @@ public class BoardDesign {
     public GridPane getGridPane() {
         return gridPane;
     }
-
-    public HBox gethBox() {
-        return hBox;
-    }
 }

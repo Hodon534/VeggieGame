@@ -16,4 +16,8 @@ public class LocationOnMap {
     public int getCol() {
         return col;
     }
+
+    public String toString() {
+        return "Row: " + row + " Col: " + col;
+    }
 }

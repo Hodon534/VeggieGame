@@ -12,7 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-public class StartPage {
+public class StartPage{
     private final Scene scene;
     private final BorderPane borderPane;
     private final Button startButton;
@@ -38,9 +38,6 @@ public class StartPage {
         return button;
     }
 
-    public BorderPane getBorderPane(){
-        return borderPane;
-    }
     public Scene getScene() {
         return scene;
     }
