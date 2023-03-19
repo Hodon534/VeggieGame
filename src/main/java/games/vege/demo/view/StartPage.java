@@ -22,15 +22,18 @@ public class StartPage{
         this.borderPane = setStartBorderPane();
         this.scene = setStartScene();
     }
+
     private BorderPane setStartBorderPane() {
         BorderPane borderPane = new BorderPane();
         borderPane.setPrefSize(BorderPaneUI.PREF_SIZE_V.value, BorderPaneUI.PREF_SIZE_V1.value);
         borderPane.setCenter(startButton);
         return borderPane;
     }
+
     private Scene setStartScene() {
         return new Scene(borderPane);
     }
+
     private Button createStartButton() {
         Button button = new Button("START");
         button.setPrefSize(ButtonUI.START_PREF_WIDTH.value, ButtonUI.START_PREF_HEIGHT.value);
@@ -41,6 +44,7 @@ public class StartPage{
     public Scene getScene() {
         return scene;
     }
+
     public Button getStartButton(){
         return startButton;
     }

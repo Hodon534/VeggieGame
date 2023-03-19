@@ -17,6 +17,7 @@ public class Buttons{
         button.setStyle(ButtonStyle.BOARD_RADIUS.value);
         return button;
     }
+
     public static Button[][] createAllButtonsOnGridPane(GridPane gridPane){
         Button[][] buttons = new Button[Settings.ROW.size][Settings.COLUMN.size];
         for (int row = 0; row < Settings.ROW.size; row++) {
@@ -26,6 +27,7 @@ public class Buttons{
             }
         } return buttons;
     }
+
     public static void setStartButtonOnAction(Button button, BoardDesign boardDesign, Stage window) {
         button.setOnAction((event) ->
                 window.setScene(boardDesign.getScene()));
