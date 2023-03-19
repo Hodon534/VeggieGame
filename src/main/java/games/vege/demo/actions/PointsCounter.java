@@ -6,7 +6,6 @@ public class PointsCounter {
     public PointsCounter() {
         pointsCollected = 0;
     }
-
     public int getPointsCollected() {
         return pointsCollected;
     }

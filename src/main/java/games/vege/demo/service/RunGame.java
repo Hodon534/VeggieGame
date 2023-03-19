@@ -1,30 +1,27 @@
-package games.vege.demo.run;
+package games.vege.demo.service;
 
 import games.vege.demo.actions.*;
 import games.vege.demo.enities.Buttons;
-import games.vege.demo.enities.ElementGrid;
 import games.vege.demo.view.BoardDesign;
 import games.vege.demo.view.StartPage;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class RunGame {
     public static void start(Stage window) {
-        window.setTitle("VEGE NINJA");
         BoardDesign boardDesign = new BoardDesign();
         StartPage startPage = new StartPage();
         Buttons.setStartButtonOnAction(startPage.getStartButton(), boardDesign, window);
-        Button[][] buttons = Buttons.createAllButtonsOnGridPane(boardDesign.getGridPane());
-        ElementGrid elementGrid = new ElementGrid();
-        Moves moves = new Moves(elementGrid);
-        BoardUpdates boardUpdates = new BoardUpdates(buttons, elementGrid, moves);
+        BoardUpdates boardUpdates = new BoardUpdates(boardDesign.getGridPane());
+        stageCreator(window, startPage);
+        window.show();
+    }
+
+    private static void stageCreator(Stage window, StartPage startPage) {
+        window.setTitle("VEGE NINJA");
         Image appIcon = new Image(RunGame.class.getResourceAsStream("/icon.png"));
         window.getIcons().add(appIcon);
         window.setScene(startPage.getScene());
-        window.show();
-
-
     }
 
 }

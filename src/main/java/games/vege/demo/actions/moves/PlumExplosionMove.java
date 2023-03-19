@@ -1,4 +1,4 @@
-package games.vege.demo.actions;
+package games.vege.demo.actions.moves;
 
 import games.vege.demo.configuration.Settings;
 import games.vege.demo.enities.Element;
@@ -10,7 +10,6 @@ public class PlumExplosionMove{
     public PlumExplosionMove(ElementGrid elementGrid) {
         elementArray = elementGrid.getFieldMap();
     }
-
 
     public void makeMove(int row) {
         for (int localRow = row; localRow == row; localRow++) {

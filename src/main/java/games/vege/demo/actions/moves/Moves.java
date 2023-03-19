@@ -1,9 +1,12 @@
-package games.vege.demo.actions;
+package games.vege.demo.actions.moves;
 
 import games.vege.demo.configuration.Settings;
 import games.vege.demo.enities.Element;
 import games.vege.demo.enities.ElementGrid;
 
+/**
+ *
+ */
 public class Moves {
 
     protected final ElementGrid elementGrid;
@@ -11,7 +14,8 @@ public class Moves {
     private final PlumExplosionMove plumExplosionMove;
     private final PeachExplosionMove peachExplosionMove;
     private final PineappleExplosionMove pineappleExplosionMove;
-    protected Element[][] elementArray;
+    //private final PearExplosionMove pearExplosionMove;
+    public static Element[][] elementArray;
 
     public Moves(ElementGrid elementGrid) {
         this.elementGrid = elementGrid;
@@ -19,9 +23,9 @@ public class Moves {
         this.plumExplosionMove = new PlumExplosionMove(elementGrid);
         this.peachExplosionMove = new PeachExplosionMove(elementGrid);
         this.pineappleExplosionMove = new PineappleExplosionMove(elementGrid);
+        //this.pearExplosionMove = new PearExplosionMove(elementGrid);
         this.elementArray = elementGrid.getFieldMap();
     }
-
 
     public void chooseWhichMoveToMake(int row, int col){
         int fieldId = getFieldId(row, col);
@@ -32,10 +36,11 @@ public class Moves {
                 case 5 -> pineappleExplosionMove.makeMove(col);
                 case 6 -> plumExplosionMove.makeMove(row);
                 case 7 -> peachExplosionMove.makeMove(row, col);
-               // case 8 ->;
+                //case 8 -> pearExplosionMove.makeMove(row, col);
             }
         } moveFieldsDown();
     }
+
     public boolean isFieldVegetable(int fieldId) {
         return fieldId == 1 || fieldId == 2 || fieldId == 3 || fieldId == 4;
     }

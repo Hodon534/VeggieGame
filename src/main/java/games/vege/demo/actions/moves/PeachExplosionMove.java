@@ -1,4 +1,4 @@
-package games.vege.demo.actions;
+package games.vege.demo.actions.moves;
 
 import games.vege.demo.configuration.Settings;
 import games.vege.demo.enities.Element;
@@ -9,6 +9,7 @@ public class PeachExplosionMove{
 
     public PeachExplosionMove(ElementGrid elementGrid) {
         elementArray = elementGrid.getFieldMap();
+
     }
 
     public void makeMove(int row, int col){

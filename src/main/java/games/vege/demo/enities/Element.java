@@ -2,7 +2,7 @@ package games.vege.demo.enities;
 
 import games.vege.demo.items.AdvancedElements;
 import games.vege.demo.items.BasicElements;
-import games.vege.demo.tools.ShuffleMachine;
+import games.vege.demo.util.ShuffleMachine;
 
 public class Element {
     private final String name;

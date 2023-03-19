@@ -1,4 +1,4 @@
-package games.vege.demo.tools;
+package games.vege.demo.util;
 
 import java.util.Random;
 //ok

@@ -1,4 +1,4 @@
-package games.vege.demo.actions;
+package games.vege.demo.actions.moves;
 
 import games.vege.demo.configuration.Settings;
 import games.vege.demo.enities.Element;
@@ -12,7 +12,7 @@ public class PineappleExplosionMove{
     }
 
     public void makeMove(int col){
-        for (int row = 0; row < Settings.COLUMN.size; row++) {
+        for (int row = 0; row < Settings.ROW.size; row++) {
             for (int tempCol = col; tempCol == col; tempCol++) {
                 elementArray[row][tempCol] = null;
             }

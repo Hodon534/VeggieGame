@@ -12,9 +12,8 @@ public enum GridPaneUI {
     INSETS_V3(10), //top
     ROW(Settings.ROW.size),
     COLUMN(Settings.COLUMN.size),
-    V_GAP(0), //bylo 10
-    H_GAP(0); //bylo 10
-
+    V_GAP(0),
+    H_GAP(0);
     public final int value;
     GridPaneUI(int value) {
         this.value = value;

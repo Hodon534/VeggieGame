@@ -1,19 +1,22 @@
 package games.vege.demo.actions;
 
+import games.vege.demo.actions.moves.Moves;
+import games.vege.demo.enities.Buttons;
 import games.vege.demo.enities.ElementGrid;
 import games.vege.demo.view.components.FontsUI;
 import games.vege.demo.configuration.Settings;
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
 
 public class BoardUpdates {
     private final Button[][] buttons;
-    private final ElementGrid elementGrid;
+    public final ElementGrid elementGrid;
     private final Moves moves;
 
-    public BoardUpdates(Button[][] buttons, ElementGrid elementGrid, Moves moves){
-        this.buttons = buttons;
-        this.elementGrid = elementGrid;
-        this.moves = moves;
+    public BoardUpdates(GridPane gridPane){
+        buttons = Buttons.createAllButtonsOnGridPane(gridPane);
+        elementGrid = new ElementGrid();
+        moves = new Moves(elementGrid);
         updateAllButtons();
     }
 

@@ -6,9 +6,7 @@ public enum HBoxUI {
     INSETS_V1(10),
     INSETS_V2(10),
     INSETS_V3(10);
-
     public final int value;
-
     HBoxUI(int value) {
         this.value = value;
     }

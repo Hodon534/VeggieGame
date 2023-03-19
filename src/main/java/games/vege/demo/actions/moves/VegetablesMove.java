@@ -1,4 +1,4 @@
-package games.vege.demo.actions;
+package games.vege.demo.actions.moves;
 
 import games.vege.demo.configuration.Settings;
 import games.vege.demo.enities.Element;
@@ -19,23 +19,29 @@ public class VegetablesMove{
         elementArray = elementGrid.getFieldMap();
         hashMap = new HashMap<>();
     }
+
     public void fieldClicked(int row, int col) {
         locationOnMap = new LocationOnMap(row, col);
         setReadyToTrue();
     }
+
     public void resetFieldClicked() {
         locationOnMap = null;
         setReadyToFalse();
     }
+
     private void setReadyToTrue() {
         isFieldAlreadyClicked = true;
     }
+
     private void setReadyToFalse() {
         isFieldAlreadyClicked = false;
     }
+
     public boolean readyToSwap() {
         return isFieldAlreadyClicked;
     }
+
     public void swapFields(int row, int col) {
         Element element = new Element(elementArray[row][col].getId());
         elementArray[row][col] = elementArray[locationOnMap.getRow()][locationOnMap.getCol()];
@@ -48,9 +54,10 @@ public class VegetablesMove{
             hashMap.put(elementArray[locationOnMap.getRow()][locationOnMap.getCol()].getId(), new ArrayList<>());
             hashMap.get(elementArray[locationOnMap.getRow()][locationOnMap.getCol()].getId()).add(new LocationOnMap(locationOnMap.getRow(), locationOnMap.getCol()));
         }
-        explodeElementsAfterSwapping();
+        //explodeElementsAfterSwapping();
 
     }
+
     public boolean areFieldsNextToEachOther(int row, int col) {
         boolean areTheyNextToEachOther = false;
         if (locationOnMap.getRow() == row && (locationOnMap.getCol() - col == 1 || locationOnMap.getCol() - col == -1)) {
@@ -60,6 +67,7 @@ public class VegetablesMove{
         }
         return areTheyNextToEachOther;
     }
+
     public void swapFieldsIfPossible(int row, int col) {
         if (!readyToSwap()) {
                 fieldClicked(row, col);
@@ -68,7 +76,8 @@ public class VegetablesMove{
                     swapFields(row, col);
         } resetFieldClicked();
     }}
-    public void explodeElementsAfterSwapping() {
+
+    /*public void explodeElementsAfterSwapping() {
         for (Map.Entry<Integer, ArrayList<LocationOnMap>> idNo: hashMap.entrySet()) {
             ArrayList<LocationOnMap> arrayList = idNo.getValue();
             System.out.println(arrayList);
@@ -88,7 +97,7 @@ public class VegetablesMove{
                     arrayList.add(new LocationOnMap(row, col-1));
                 }
 
-            }*/
+            }
         }
     }
 
@@ -128,5 +137,5 @@ public class VegetablesMove{
     public void addToHashMap(){
 
     }
-
+*/
 }
