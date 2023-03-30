@@ -1,5 +1,6 @@
 package games.vege.demo.actions.moves;
 
+import games.vege.demo.actions.BoardUpdates;
 import games.vege.demo.configuration.Settings;
 import games.vege.demo.enities.Element;
 import games.vege.demo.enities.ElementGrid;
@@ -9,22 +10,20 @@ import games.vege.demo.enities.ElementGrid;
  */
 public class Moves {
 
-    protected final ElementGrid elementGrid;
+    //protected final ElementGrid elementGrid;
     private final VegetablesMove vegetablesMove;
     private final PlumExplosionMove plumExplosionMove;
     private final PeachExplosionMove peachExplosionMove;
     private final PineappleExplosionMove pineappleExplosionMove;
-    //private final PearExplosionMove pearExplosionMove;
-    public static Element[][] elementArray;
+    public static Element[][] elementArray = BoardUpdates.elementGrid.getFieldMap();
 
-    public Moves(ElementGrid elementGrid) {
-        this.elementGrid = elementGrid;
-        this.vegetablesMove = new VegetablesMove(elementGrid);
-        this.plumExplosionMove = new PlumExplosionMove(elementGrid);
-        this.peachExplosionMove = new PeachExplosionMove(elementGrid);
-        this.pineappleExplosionMove = new PineappleExplosionMove(elementGrid);
+    public Moves() {
+        this.vegetablesMove = new VegetablesMove();
+        this.plumExplosionMove = new PlumExplosionMove();
+        this.peachExplosionMove = new PeachExplosionMove();
+        this.pineappleExplosionMove = new PineappleExplosionMove();
         //this.pearExplosionMove = new PearExplosionMove(elementGrid);
-        this.elementArray = elementGrid.getFieldMap();
+        this.elementArray = BoardUpdates.elementGrid.getFieldMap();
     }
 
     public void chooseWhichMoveToMake(int row, int col){
@@ -46,16 +45,16 @@ public class Moves {
     }
 
     public int getFieldId(int row, int col) {
-        return elementGrid.getFieldMap()[row][col].getId();
+        return BoardUpdates.elementGrid.getFieldMap()[row][col].getId();
     }
 
     public void moveFieldsDown() {
         for (int row = Settings.ROW.size - 1; row >= 0; row--) {
             for (int col = Settings.COLUMN.size - 1; col >= 0; col--) {
-                if (elementGrid.getFieldMap()[row][col] == null) {
+                if (BoardUpdates.elementGrid.getFieldMap()[row][col] == null) {
                     for (int tempCol = col-1; tempCol >= 0; tempCol--) {
                         if (elementArray[row][tempCol] != null) {
-                            elementArray[row][col] = elementGrid.getFieldMap()[row][tempCol];
+                            elementArray[row][col] = BoardUpdates.elementGrid.getFieldMap()[row][tempCol];
                             elementArray[row][tempCol] = null;
                             break;
                         }}}}

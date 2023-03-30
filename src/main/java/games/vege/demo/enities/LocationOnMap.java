@@ -1,21 +1,11 @@
 package games.vege.demo.enities;
 
-public class LocationOnMap {
-    private final int row;
-    private final int col;
-
-    public LocationOnMap(int row, int col) {
-        this.row = row;
-        this.col = col;
-    }
-
-    public int getRow() {
-        return row;
-    }
-
-    public int getCol() {
-        return col;
-    }
+/**
+ * Represents location of the filed that has been clicked by player
+ * @param row
+ * @param col
+ */
+public record LocationOnMap(int row, int col) {
 
     public String toString() {
         return "Row: " + row + " Col: " + col;

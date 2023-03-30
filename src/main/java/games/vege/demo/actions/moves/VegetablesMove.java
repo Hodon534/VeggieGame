@@ -1,22 +1,20 @@
 package games.vege.demo.actions.moves;
 
-import games.vege.demo.configuration.Settings;
+import games.vege.demo.actions.BoardUpdates;
 import games.vege.demo.enities.Element;
 import games.vege.demo.enities.ElementGrid;
 import games.vege.demo.enities.LocationOnMap;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class VegetablesMove{
     private LocationOnMap locationOnMap;
     private boolean isFieldAlreadyClicked;
     private final Map<Integer, ArrayList<LocationOnMap>> hashMap;
-    private final Element[][] elementArray;
-    public VegetablesMove(ElementGrid elementGrid) {
-        elementArray = elementGrid.getFieldMap();
+    private final Element[][] elementArray = BoardUpdates.elementGrid.getFieldMap();
+    public VegetablesMove() {
         hashMap = new HashMap<>();
     }
 
@@ -44,15 +42,15 @@ public class VegetablesMove{
 
     public void swapFields(int row, int col) {
         Element element = new Element(elementArray[row][col].getId());
-        elementArray[row][col] = elementArray[locationOnMap.getRow()][locationOnMap.getCol()];
-        elementArray[locationOnMap.getRow()][locationOnMap.getCol()] = element;
+        elementArray[row][col] = elementArray[locationOnMap.row()][locationOnMap.col()];
+        elementArray[locationOnMap.row()][locationOnMap.col()] = element;
         if (!hashMap.containsKey(elementArray[row][col].getId())) {
             hashMap.put(elementArray[row][col].getId(), new ArrayList<>());
             hashMap.get(elementArray[row][col].getId()).add(new LocationOnMap(row, col));
         }
-        if (!hashMap.containsKey(elementArray[locationOnMap.getRow()][locationOnMap.getCol()].getId())) {
-            hashMap.put(elementArray[locationOnMap.getRow()][locationOnMap.getCol()].getId(), new ArrayList<>());
-            hashMap.get(elementArray[locationOnMap.getRow()][locationOnMap.getCol()].getId()).add(new LocationOnMap(locationOnMap.getRow(), locationOnMap.getCol()));
+        if (!hashMap.containsKey(elementArray[locationOnMap.row()][locationOnMap.col()].getId())) {
+            hashMap.put(elementArray[locationOnMap.row()][locationOnMap.col()].getId(), new ArrayList<>());
+            hashMap.get(elementArray[locationOnMap.row()][locationOnMap.col()].getId()).add(new LocationOnMap(locationOnMap.row(), locationOnMap.col()));
         }
         //explodeElementsAfterSwapping();
 
@@ -60,9 +58,9 @@ public class VegetablesMove{
 
     public boolean areFieldsNextToEachOther(int row, int col) {
         boolean areTheyNextToEachOther = false;
-        if (locationOnMap.getRow() == row && (locationOnMap.getCol() - col == 1 || locationOnMap.getCol() - col == -1)) {
+        if (locationOnMap.row() == row && (locationOnMap.col() - col == 1 || locationOnMap.col() - col == -1)) {
             areTheyNextToEachOther = true;
-        } else if (locationOnMap.getCol() == col && (locationOnMap.getRow() - row == 1 || locationOnMap.getRow() - row == -1)) {
+        } else if (locationOnMap.col() == col && (locationOnMap.row() - row == 1 || locationOnMap.row() - row == -1)) {
             areTheyNextToEachOther = true;
         }
         return areTheyNextToEachOther;

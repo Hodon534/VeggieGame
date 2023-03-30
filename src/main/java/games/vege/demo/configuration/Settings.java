@@ -1,5 +1,10 @@
 package games.vege.demo.configuration;
-//ok
+
+/**
+ * Global settings of the game:
+ * - 12 x 12 board
+ * - max 5000 points
+ */
 public enum Settings {
     ROW(12),
     COLUMN(12),

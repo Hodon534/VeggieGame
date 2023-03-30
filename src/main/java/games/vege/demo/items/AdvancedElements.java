@@ -1,5 +1,8 @@
 package games.vege.demo.items;
-//ok
+
+/**
+ * ADVANCED ELEMENTS - fruits (for each such element that explodes, the player receives 100 points).
+ */
 public enum AdvancedElements {
     PINEAPPLE("Pineapple"),
     PLUM("Plum"),

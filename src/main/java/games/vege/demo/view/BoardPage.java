@@ -14,8 +14,11 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
+/**
+ * Board Page View
+ */
 
-public class BoardDesign {
+public class BoardPage {
     private final Scene scene;
     private final BorderPane borderPane;
     private final GridPane gridPane;
@@ -23,7 +26,7 @@ public class BoardDesign {
     private final Label label;
     private final ProgressBar progressBar;
 
-    public BoardDesign(){
+    public BoardPage(){
         this.label = setLabel();
         this.progressBar = setProgressBar();
         this.hBox = setHBox();

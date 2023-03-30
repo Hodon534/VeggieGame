@@ -1,11 +1,10 @@
 package games.vege.demo.view.layout;
 
 import games.vege.demo.configuration.Settings;
-
+/**
+ * Global GridPane settings
+ */
 public enum GridPaneUI {
-    /**
-     * GridPane settings
-     */
     INSETS_V(10), //bottom
     INSETS_V1(10), //left
     INSETS_V2(10), //right

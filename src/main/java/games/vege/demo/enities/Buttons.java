@@ -1,13 +1,16 @@
 package games.vege.demo.enities;
 
 import games.vege.demo.configuration.Settings;
-import games.vege.demo.view.BoardDesign;
+import games.vege.demo.view.BoardPage;
 import games.vege.demo.view.components.ButtonStyle;
 import games.vege.demo.view.components.ButtonUI;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+/**
+ * Creates all the buttons on Board Page and connects them with Elements on ElementGrid, one by one
+ */
 public class Buttons{
 
     public static Button createButton() {
@@ -28,9 +31,9 @@ public class Buttons{
         } return buttons;
     }
 
-    public static void setStartButtonOnAction(Button button, BoardDesign boardDesign, Stage window) {
+    public static void setStartButtonOnAction(Button button, BoardPage boardPage, Stage window) {
         button.setOnAction((event) ->
-                window.setScene(boardDesign.getScene()));
+                window.setScene(boardPage.getScene()));
     }
 
 

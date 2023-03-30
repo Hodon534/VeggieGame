@@ -12,6 +12,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+/**
+ * Start Page View
+ */
 public class StartPage{
     private final Scene scene;
     private final BorderPane borderPane;

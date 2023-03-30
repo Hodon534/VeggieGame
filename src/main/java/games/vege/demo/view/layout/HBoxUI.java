@@ -1,5 +1,8 @@
 package games.vege.demo.view.layout;
 
+/**
+ * Global HBox settings
+ */
 public enum HBoxUI {
     SPACING(5),
     INSETS_V(10),

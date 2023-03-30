@@ -2,17 +2,20 @@ package games.vege.demo.service;
 
 import games.vege.demo.actions.*;
 import games.vege.demo.enities.Buttons;
-import games.vege.demo.view.BoardDesign;
+import games.vege.demo.view.BoardPage;
 import games.vege.demo.view.StartPage;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+/**
+ * Initialization of everything that happens in Veggie Game
+ */
 public class RunGame {
     public static void start(Stage window) {
-        BoardDesign boardDesign = new BoardDesign();
+        BoardPage boardPage = new BoardPage();
         StartPage startPage = new StartPage();
-        Buttons.setStartButtonOnAction(startPage.getStartButton(), boardDesign, window);
-        BoardUpdates boardUpdates = new BoardUpdates(boardDesign.getGridPane());
+        Buttons.setStartButtonOnAction(startPage.getStartButton(), boardPage, window);
+        BoardUpdates boardUpdates = new BoardUpdates(boardPage.getGridPane());
         stageCreator(window, startPage);
         window.show();
     }

@@ -1,5 +1,8 @@
 package games.vege.demo.items;
-//ok
+
+/**
+ * BASIC ELEMENTS - vegetables (for each such element that explodes, the player receives 50 points).
+ */
 public enum BasicElements {
     CARROT("Carrot"),
     ONION("Onion"),

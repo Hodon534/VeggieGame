@@ -1,10 +1,16 @@
 package games.vege.demo.util;
 
 import java.util.Random;
-//ok
-public class ShuffleMachine {
-    private static final Random random = new Random();
 
+/**
+ * Component to auto-generate random fields
+ */
+public class ShuffleMachine {
+
+    private static final Random random = new Random();
+    /**
+     * Auto-generate random fields
+     */
     public static int shuffleElements(){
         int shuffle = random.nextInt(1,100);
         int elementNo = 0;
@@ -27,7 +33,10 @@ public class ShuffleMachine {
         }
         return elementNo;
     }
-    //shuffle at the start of the game - no fruits, only veggies
+
+    /**
+     * Auto-generate random fields at the start of the game - no fruits, only veggies
+     */
     public static int initialShuffleElements(){
         int shuffle = random.nextInt(1,100);
         int elementNo = 0;
