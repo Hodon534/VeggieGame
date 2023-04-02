@@ -22,7 +22,7 @@ public class RunGame {
 
     private static void stageCreator(Stage window, StartPage startPage) {
         window.setTitle("VEGE NINJA");
-        Image appIcon = new Image(RunGame.class.getResourceAsStream("/icon.png"));
+        Image appIcon = new Image(RunGame.class.getResourceAsStream("/images/icon.png"));
         window.getIcons().add(appIcon);
         window.setScene(startPage.getScene());
     }
